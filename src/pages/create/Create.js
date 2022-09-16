@@ -2,6 +2,7 @@ import React from 'react';
 import './Create.css';
 import { useState, useRef } from 'react';
 import { useFetch } from '../../hooks/useFetch';
+import { useHistory } from 'react-router-dom';
 
 export default function Create() {
   const [title, setTitle] = useState('');
@@ -10,6 +11,7 @@ export default function Create() {
   const [method, setMethod] = useState('');
   const [cookingTime, setCookingTime] = useState('');
   const ref = useRef();
+  const history = useHistory();
 
   const { sendPost } = useFetch('http://localhost:3000/recipes', 'POST');
 
@@ -21,6 +23,7 @@ export default function Create() {
       method,
       cookingTime: cookingTime + 'minutes',
     });
+    history.push('/');
   }
 
   function addIngridient() {
