@@ -13,10 +13,7 @@ export default function Create() {
   const ref = useRef();
   const history = useHistory();
 
-  const { sendPost, data, error } = useFetch(
-    'http://localhost:3000/recipes',
-    'POST'
-  );
+  const { sendPost, data } = useFetch('http://localhost:3000/recipes', 'POST');
 
   console.log(data);
 

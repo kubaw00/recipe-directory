@@ -1,0 +1,8 @@
+.searchbar form {
+  display: flex;
+  align-items: center;
+}
+
+.searchbar label {
+  margin-right: 20px;
+}
