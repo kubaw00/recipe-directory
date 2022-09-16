@@ -4,7 +4,7 @@ export const useFetch = (url, method = 'GET') => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-  const [options, setOptions] = useState({});
+  const [options, setOptions] = useState(null);
 
   function sendPost(recipe) {
     setOptions({
