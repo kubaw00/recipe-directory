@@ -1,16 +1,16 @@
 import './SearchBar.css';
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar() {
   const [term, setTerm] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function onSubmit(e) {
     e.preventDefault();
 
-    history.push(`/search?q=${term}`);
+    navigate(`/search?q=${term}`);
     setTerm('');
   }
 

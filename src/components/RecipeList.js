@@ -3,8 +3,8 @@ import './RecipeList.css';
 import { Link } from 'react-router-dom';
 
 export default function RecipeList({ recipes }) {
-  if (recipes.length) {
-    return <div class='error'>No recipes to load...</div>;
+  if (recipes.length === 0) {
+    return <div className='error'>No recipes to load...</div>;
   }
 
   return (

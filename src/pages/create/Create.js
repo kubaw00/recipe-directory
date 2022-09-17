@@ -2,7 +2,7 @@ import React from 'react';
 import './Create.css';
 import { useState, useRef, useEffect } from 'react';
 import { useFetch } from '../../hooks/useFetch';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Create() {
   const [title, setTitle] = useState('');
@@ -11,11 +11,9 @@ export default function Create() {
   const [method, setMethod] = useState('');
   const [cookingTime, setCookingTime] = useState('');
   const ref = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const { sendPost, data } = useFetch('http://localhost:3000/recipes', 'POST');
-
-  console.log(data);
 
   function onSubmit(e) {
     e.preventDefault();
@@ -40,9 +38,9 @@ export default function Create() {
 
   useEffect(() => {
     if (data) {
-      history.push('/');
+      navigate('/');
     }
-  }, [history, data]);
+  }, [navigate, data]);
 
   return (
     <div className='create'>
