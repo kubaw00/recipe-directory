@@ -11,6 +11,7 @@ export default function SearchBar() {
     e.preventDefault();
 
     history.push(`/search?q=${term}`);
+    setTerm('');
   }
 
   return (
